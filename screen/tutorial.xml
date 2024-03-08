@@ -5,10 +5,12 @@
 <!--    <widgets>-->
 <!--        <label type="h1" text="Hello world!"/>-->
 <!--    </widgets>-->
+    <subscreens default-item="FindTutorial"/>
     <widgets>
         <label type="h1" text="Hello world!"/>
         <render-mode>
             <text type="html,vuet" location="component://tutorial/template/tutorial/hello.html"/>
         </render-mode>
+        <subscreens-active/>
     </widgets>
 </screen>

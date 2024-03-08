@@ -17,7 +17,8 @@
             </field>
         </form-list>
         <transition name="createTutorial">
-            <service-call name="create#tutorial.Tutorial"/>
+<!--            <service-call name="create#tutorial.Tutorial"/>-->
+            <service-call name="tutorial.TutorialServices.create#Tutorial"/> 
             <default-response url="."/>
         </transition>
         <container-dialog id="CreateTutorialDialog" button-text="Create Tutorial">

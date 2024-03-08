@@ -27,4 +27,14 @@
         </actions>
     </service>
 
+    <service verb="create" noun="TutorialGroovy" type="script"
+             location="component://tutorial/service/tutorial/createTutorial.groovy">
+        <in-parameters>
+            <auto-parameters entity-name="tutorial.Tutorial" include="all"/>
+        </in-parameters>
+        <out-parameters>
+            <auto-parameters entity-name="tutorial.Tutorial" include="pk" required="true"/>
+        </out-parameters>
+    </service>
+
 </services>

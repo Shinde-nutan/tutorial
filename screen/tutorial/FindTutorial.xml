@@ -5,6 +5,10 @@
         <entity-find entity-name="tutorial.Tutorial" list="tutorialList">
             <search-form-inputs/></entity-find>
     </actions>
+    <transition name="createTutorial">
+        <service-call name="create#tutorial.Tutorial"/>
+        <default-response url="."/>
+    </transition>
     <widgets>
 <!--        <form-list name="ListTutorials" list="tutorialList" header-dialog="true" skip-form="true">-->
 <!--            <auto-fields-entity entity-name="tutorial.Tutorial" field-type="find-display"/>-->
@@ -16,10 +20,6 @@
                 <default-field><display/></default-field>
             </field>
         </form-list>
-        <transition name="createTutorial">
-            <service-call name="create#tutorial.Tutorial"/>
-            <default-response url="."/>
-        </transition>
         <container-dialog id="CreateTutorialDialog" button-text="Create Tutorial">
             <form-single name="CreateTutorial" transition="createTutorial">
                 <auto-fields-entity entity-name="tutorial.Tutorial" field-type="edit"/>

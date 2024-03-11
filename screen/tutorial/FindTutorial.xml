@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd">
+
+    <transition name="createTutorial">
+        <!--        <service-call name="create#tutorial.Tutorial"/>-->
+        <service-call name="tutorial.TutorialServices.create#Tutorial"/>
+        <default-response url="."/>
+    </transition>
     <actions>
         <entity-find entity-name="tutorial.Tutorial" list="tutorialList">
             <search-form-inputs/></entity-find>
@@ -16,11 +22,6 @@
                 <default-field><display/></default-field>
             </field>
         </form-list>
-        <transition name="createTutorial">
-<!--            <service-call name="create#tutorial.Tutorial"/>-->
-            <service-call name="tutorial.TutorialServices.create#Tutorial"/>
-            <default-response url="."/>
-        </transition>
         <container-dialog id="CreateTutorialDialog" button-text="Create Tutorial">
             <form-single name="CreateTutorial" transition="createTutorial">
                 <auto-fields-entity entity-name="tutorial.Tutorial" field-type="edit"/>
